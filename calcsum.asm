@@ -9,11 +9,12 @@
 .386
 .model flat,c
 .data
-	msg db 'DIVISION BY ZERO ERROR', 0
-	fmt db '%s', 10, 0
+	msg db 'DIVISION BY ZERO ERROR', 0 ; create a variable called msg which will be outputted
+					; if a division by zero exception occurs
+	fmt db '%s', 10, 0 ; formatting for the printf call
 
 .code
-extern printf:proc
+extern printf:proc ; link the function printf, tell assembly it's an external function from C
 intmuldiv proc
 	push ebp ; push frame pointer
 	mov ebp, esp ; preserve callers stack frame
