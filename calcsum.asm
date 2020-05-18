@@ -31,7 +31,7 @@ intmuldiv proc
 	mov ebx, [ebp + 16] ; prod ptr
 	mov [ebx], edx ; *prod = (b * a)
 	
-	mov eax, [ebp + 8] ; eax = ecx, 'a'
+	mov eax, [ebp + 8] ; eax = a
 	cdq ; EDX:EAX, edx is most significant bits
 	idiv dword ptr[ebp + 12] ; edx / eax, high bits get divided by low bits 
 	; quotient gets stored in eax, remainder gets stored in edx
